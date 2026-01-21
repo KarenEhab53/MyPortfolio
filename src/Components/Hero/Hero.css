@@ -1,0 +1,137 @@
+/* HERO SECTION */
+.hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.container {
+  max-width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.hero-left {
+  width: 50%;
+  min-width: 250px;
+}
+
+.hero-left h1 {
+  font-weight: bold;
+  font-size: 38px;
+  margin: 10px 0;
+}
+
+.hero-left .role {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.hero-left p {
+  font-size: 1rem;
+}
+
+/* RIGHT SIDE */
+.hero-right {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Background circle */
+.hero-right::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--color-neutral-dark, #ccc);
+  border-radius: 50%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Circular floating image wrapper */
+.hero-img-wrapper {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Typing effect for name */
+.motion-typing {
+  display: inline-block;
+  white-space: wrap;
+  overflow: hidden;
+  max-width: 100%;
+  border-right: 2px solid black;
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.motion-typing {
+  animation: blink 0.8s step-end infinite;
+}
+
+/* ===================== */
+/* 📱 Mobile */
+@media (max-width: 760px) {
+  .hero {
+    margin-top: 70px;
+  }
+
+  .container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-left {
+    width: 100%;
+  }
+
+  .hero-left h1 {
+    font-size: 28px;
+  }
+
+  .hero-left p,
+  .hero-left .role {
+    font-size: 1rem;
+  }
+
+  .hero-right {
+    width: 220px;
+    height: 220px;
+    margin-bottom: 20px;
+  }
+
+  .hero-img-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 100%;
+  }
+}

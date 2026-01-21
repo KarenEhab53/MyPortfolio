@@ -1,0 +1,183 @@
+:root {
+  --color-primary: #8B5E3C;      
+  --color-secondary: #CBB79A;    
+  --color-accent: #A1887F;       
+  --color-neutral-dark: #4E3B2F; 
+  --color-neutral-light: #F5F1EC; 
+}
+
+nav{
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+nav .cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 500px;
+  padding: 10px 20px;
+  background-color: var(--color-secondary);
+  border-radius: 40px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+nav .cont.scrolled {
+  opacity: 0.8; 
+  background-color:transparent;
+  transform: scale(0.95);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+nav .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+/* Links */
+.nav-links li a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--color-neutral-dark);
+  font-weight: bold;
+  transform: scale(1.1);
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Dropdown menu hidden by default */
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background-color: var(--color-secondary);
+  border-radius: 15px;
+  padding: 10px 0;
+  width: 160px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  display: flex;
+text-align: center;
+justify-content: space-around;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Show dropdown when React adds 'show' class */
+.dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu li {
+  text-align: center;
+  padding: 10px 0;
+  list-style: none;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+  color: var(--color-neutral-dark);
+  font-weight: bold;
+
+}
+/* Hamburger icon (hidden on desktop) */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-primary);
+}
+
+/* Mobile menu */
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+/* Dropdown styling remains the same */
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 760px) {
+  .hamburger {
+    display: block;
+  }
+  nav{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+nav .cont{
+    width: 200px;
+  
+}
+  .nav-links {
+    position: fixed;
+    top: 50px; /* below navbar */
+    right: 0px;
+    width: 150px;
+    flex-direction: column;
+  
+  background-color: var(--color-secondary);
+    border-radius: 15px;
+    padding: 5px 25px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.2);
+    z-index: 999;
+    text-align: center;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+    right: 40px;
+  }
+
+  .nav-links li a {
+    font-size: 1.2rem;
+  }
+
+  .dropdown-menu {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px 0;
+  }
+}
