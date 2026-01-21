@@ -32,3 +32,31 @@ button {
 button:hover {
   background-color: var(--color-secondary);
 }
+html {
+  scroll-behavior: smooth;
+}
+/* For Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 8px; /* thin scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-neutral-light); /* track background */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary); /* thumb color */
+  border-radius: 10px;
+  border: 2px solid var(--color-neutral-light); /* optional spacing */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-secondary);
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-neutral-light);
+}

@@ -23,7 +23,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="hero">
+    <section className="hero" id="hero">
       <div className="container">
         <div className="hero-left">
           {/* Role text */}
@@ -59,8 +59,10 @@ const Hero = () => {
             layouts to interactions, I love every step of turning a design into
             a responsive, living website.
           </motion.p>
-          <button>Contact Us</button>
-          <button>Projects</button>
+          <div className="buttons">
+            <button>Contact Us</button>
+            <button>Projects</button>
+          </div>
         </div>
 
         <div className="hero-right">

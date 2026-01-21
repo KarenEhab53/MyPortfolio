@@ -1,0 +1,182 @@
+:root {
+  --color-primary: #8b5e3c;
+  --color-secondary: #cbb79a;
+  --color-accent: #a1887f;
+  --color-neutral-dark: #4e3b2f;
+  --color-neutral-light: #f5f1ec;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 36px;
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+
+/* Timeline container */
+.timeline {
+  position: relative;
+  
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--color-accent);
+  border-radius: 2px;
+  z-index: -1;
+}
+
+/* Timeline card */
+.timeline-card {
+  position: relative;
+  width: 45%;
+  padding: 15px 25px;
+  background-color: var(--color-neutral-dark);
+  color: var(--color-neutral-light);
+  border-radius: 15px;
+}
+
+
+
+/* Alternate left and right */
+.timeline-card.left {
+  align-self: flex-start;
+  margin-left: -30px;
+}
+
+
+
+.timeline-card.right {
+  align-self: flex-end;
+  margin-right: -30px;
+}
+
+.timeline-card.right .circle {
+  left: -50px;
+}
+
+/* Resume button */
+.about a {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  text-decoration: none; /* removes underline */
+  font-style: normal;
+  color: var(--color-neutral-light);
+  display: inline-block;
+  text-align: center;
+}
+
+.about a:hover {
+  background-color: var(--color-neutral-dark);
+  transform: scale(1.1); /* scale effect */
+  transition: all 1s ease-in-out;
+}
+.timeline-card:hover{
+   background-color: #8b5e3c;
+    transition: all 1s ease-in-out;
+}
+
+@media (max-width: 760px) {
+
+  .timeline {
+    width: 80%;
+    padding: 20px;
+    gap: 60px; /* more space between cards */
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Move vertical timeline line to left */
+  .timeline::before {
+    left: 20px;
+    transform: none;
+    height: 100%;
+    width: 3px;
+    background-color: var(--color-accent);
+  }
+
+  /* Timeline cards full width */
+  .timeline-card,
+  .timeline-card.left,
+  .timeline-card.right {
+    width: 80%;
+    align-self: flex-start;
+    margin: 0;
+    margin-left: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* soft shadow */
+    border-radius: 25px; /* more rounded */
+    background-color: var(--color-neutral-dark);
+    color: var(--color-neutral-light);
+    position: relative;
+    transition: all 1s ease-in-out;
+  }
+
+  /* Hover effect for better interactivity */
+  .timeline-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    background-color: #8b5e3c;
+    transition: all 1s ease-in-out;
+  }
+
+  /* Circle on left */
+  .timeline-card .circle {
+display: none;
+  }
+
+  /* Text inside cards */
+  .timeline-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Heading */
+  .about h2 {
+    font-size: 28px;
+    margin-bottom: 35px;
+  }
+
+  /* Resume button */
+  .btn-resume {
+    padding: 12px 28px;
+    font-size: 1rem;
+    border-radius: 12px;
+  }
+
+  /* Optional: subtle animation slide from left for each card */
+  .timeline-card {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  .timeline-card.in-view {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.6s ease-out;
+  }
+}

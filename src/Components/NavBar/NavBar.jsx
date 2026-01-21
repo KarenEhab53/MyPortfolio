@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import {
   FaGithub,
   FaLinkedin,
@@ -18,9 +17,7 @@ const NavBar = () => {
 
   // Scroll effect
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -49,24 +46,24 @@ const NavBar = () => {
         {/* Links */}
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
           <li>
-            <Link to="/" onClick={() => setMenuOpen(false)}>
+            <a href="#hero" onClick={() => setMenuOpen(false)}>
               Home
-            </Link>
+            </a>
           </li>
           <li>
-            <Link to="/about" onClick={() => setMenuOpen(false)}>
+            <a href="#about" onClick={() => setMenuOpen(false)}>
               About
-            </Link>
+            </a>
           </li>
           <li>
-            <Link to="/skills" onClick={() => setMenuOpen(false)}>
-              Skills
-            </Link>
+            <a href="#tech" onClick={() => setMenuOpen(false)}>
+              Tech
+            </a>
           </li>
           <li>
-            <Link to="/projects" onClick={() => setMenuOpen(false)}>
+            <a href="#projects" onClick={() => setMenuOpen(false)}>
               Projects
-            </Link>
+            </a>
           </li>
 
           {/* Dropdown */}
