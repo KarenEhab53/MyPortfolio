@@ -7,7 +7,7 @@ import {
   BiLogoTailwindCss,
 } from "react-icons/bi";
 import { motion } from "framer-motion";
-import "./Tech.css"; // import the CSS
+import "./tech.css"; // import the CSS
 
 const Tech = () => {
   const container = {
