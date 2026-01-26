@@ -117,8 +117,4 @@
 }
 
 /* Mobile */
-@media (max-width: 768px) {
-  .nav-btn {
-    display: none;
-  }
-}
+
