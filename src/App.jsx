@@ -3,6 +3,9 @@ import NavBar from "./Components/NavBar/NavBar";
 import Hero from "./Components/Hero/Hero";
 import About from "./Components/About/About";
 import Technologies from "./Components/Tech/Tech";
+import Projects from "./Components/Projects/Projects";
+import Footer from "./Components/Footer/Footer";
+import Contact from "./Components/Contact Us/Contact";
 
 function App() {
   return (
@@ -13,6 +16,9 @@ function App() {
       </Routes>
       <About/>
       <Technologies/>
+      <Projects/>
+      <Contact/>
+      <Footer/>
     </>
   );
 }

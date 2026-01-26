@@ -14,24 +14,26 @@ const NavBar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const dropdownRef = useRef(null);
+const [activeLink, setActiveLink] = useState("#hero");
 
   // Scroll effect
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const sections = document.querySelectorAll("section");
+    const handleScroll = () => {
+      let current = "#hero";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 60; // adjust offset
+        if (window.scrollY >= sectionTop) {
+          current = `#${section.id}`;
+        }
+      });
+      setActiveLink(current);
+    };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        setDropdownOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
 
   return (
     <nav className={scrolled ? "scrolled" : ""}>
@@ -46,35 +48,67 @@ const NavBar = () => {
         {/* Links */}
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
           <li>
-            <a href="#hero" onClick={() => setMenuOpen(false)}>
+            <a
+              href="#hero"
+              className={activeLink === "#hero" ? "active" : ""}
+              onClick={() => {
+                setMenuOpen(false);
+                setActiveLink("#hero");
+              }}
+            >
               Home
             </a>
           </li>
           <li>
-            <a href="#about" onClick={() => setMenuOpen(false)}>
+            <a
+              href="#about"
+              className={activeLink === "#about" ? "active" : ""}
+              onClick={() => {
+                setMenuOpen(false);
+                setActiveLink("#about");
+              }}
+            >
               About
             </a>
           </li>
           <li>
-            <a href="#tech" onClick={() => setMenuOpen(false)}>
+            <a
+              href="#tech"
+              className={activeLink === "#tech" ? "active" : ""}
+              onClick={() => {
+                setMenuOpen(false);
+                setActiveLink("#tech");
+              }}
+            >
               Tech
             </a>
           </li>
           <li>
-            <a href="#projects" onClick={() => setMenuOpen(false)}>
+            <a
+              href="#projects"
+              className={activeLink === "#projects" ? "active" : ""}
+              onClick={() => {
+                setMenuOpen(false);
+                setActiveLink("#projects");
+              }}
+            >
               Projects
             </a>
           </li>
 
           {/* Dropdown */}
           <li className="dropdown" ref={dropdownRef}>
-            <span
-              className="dropdown-toggle"
-              onClick={() => setDropdownOpen(!dropdownOpen)}
+            <a
+              href="#contact"
+              className={activeLink === "#contact" ? "active" : ""}
             >
-              Contact ▼
-            </span>
-
+              <span
+                className="dropdown-toggle"
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+              >
+                Contact ▼
+              </span>
+            </a>
             <ul className={`dropdown-menu ${dropdownOpen ? "show" : ""}`}>
               <li>
                 <a

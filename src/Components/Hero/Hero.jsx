@@ -4,7 +4,6 @@ import "./Hero.css";
 import img from "../../assets/photo_2022-08-23_18-34-41-removebg-preview.png";
 
 const Hero = () => {
-  // Fade-in animation for paragraph and role
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: (delay = 0) => ({
@@ -26,7 +25,6 @@ const Hero = () => {
     <section className="hero" id="hero">
       <div className="container">
         <div className="hero-left">
-          {/* Role text */}
           <motion.p
             className="role"
             variants={fadeInUp}
@@ -37,31 +35,34 @@ const Hero = () => {
             Front-End Developer
           </motion.p>
 
-          {/* Typing effect for the name */}
           <motion.h1
             className="motion-typing"
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
             transition={{ duration: 2, ease: "linear", delay: 0.5 }}
           >
-            Hello, my name is Karen Ehab
+            Hello, my name is <br /> Karen Ehab
           </motion.h1>
 
-          {/* Paragraph fades in after the name */}
           <motion.p
             className="desc"
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
-            custom={1.5} // delay after name
+            custom={1.5}
           >
             I don’t just build websites — I enjoy crafting experiences. From
             layouts to interactions, I love every step of turning a design into
             a responsive, living website.
           </motion.p>
           <div className="buttons">
-            <button>Contact Us</button>
+            <a href="#contact" onClick={() => setMenuOpen(false)}>
+              {" "}
+              <button>Contact Us </button>
+            </a>
+               <a href="#projects" onClick={() => setMenuOpen(false)}>
             <button>Projects</button>
+            </a>
           </div>
         </div>
 
