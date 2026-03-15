@@ -32,7 +32,7 @@ const Hero = () => {
             animate="visible"
             custom={0}
           >
-            Front-End Developer
+            MERN Stack Developer
           </motion.p>
 
           <motion.h1

@@ -76,6 +76,10 @@
 .sky:hover { color: #38b2ac; }         /* Tailwind */
 .blue:hover { color: #61dafb; }        /* React */
 .blue-dark:hover { color: #1572b6; }   /* CSS3 */
+.red:hover { color: #E34F26; }   /* CSS3 */
+.figma:hover { color: #F24E1E; }   /* CSS3 */
+.yellow:hover { color: #339933; }   /* CSS3 */
+.green:hover { color: #47A248; }   /* CSS3 */
 
 /* Label text under icon */
 .tech-label {

@@ -2,7 +2,11 @@ import React from "react";
 import {
   BiLogoBootstrap,
   BiLogoCss3,
+  BiLogoFigma,
+  BiLogoHtml5,
   BiLogoJavascript,
+  BiLogoMongodb,
+  BiLogoNodejs,
   BiLogoReact,
   BiLogoTailwindCss,
 } from "react-icons/bi";
@@ -28,8 +32,12 @@ const Tech = () => {
     { icon: <BiLogoJavascript />, name: "JavaScript", color: "orange" },
     { icon: <BiLogoBootstrap />, name: "Bootstrap", color: "indigo" },
     { icon: <BiLogoTailwindCss />, name: "Tailwind CSS", color: "sky" },
+    { icon: <BiLogoHtml5 />, name: "HTML", color: "red" },
     { icon: <BiLogoReact />, name: "React.js", color: "blue" },
     { icon: <BiLogoCss3 />, name: "CSS3", color: "blue-dark" },
+    { icon: <BiLogoNodejs />, name: "Node.js", color: "yellow" },
+    { icon: <BiLogoMongodb />, name: "Mongodb", color: "green" },
+    { icon: <BiLogoFigma />, name: "Figma", color: "figma" },
   ];
 
   return (

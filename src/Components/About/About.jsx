@@ -3,11 +3,12 @@ import "./about.css";
 
 const About = () => {
   const timeline = [
-    "I am Karen Ehab, a passionate Front-End Developer dedicated to creating engaging and user-friendly web experiences.",
-    "Proficient in React.js, JavaScript, HTML, CSS, Tailwind, and Bootstrap, I build responsive and interactive interfaces.",
-    "I am a lifelong learner, constantly exploring backend development, AWS, and software fundamentals.",
-    "I thrive on solving challenges, optimizing performance, and collaborating on innovative projects.",
-    "Beyond coding, I enjoy writing clean, maintainable code and creating meaningful experiences.",
+    "Hi, I’m Karen Ehab! I’m a passionate MERN Stack Developer who loves bringing ideas to life through code.",
+    "I enjoy creating seamless, dynamic web applications that users love to interact with.",
+    "With skills in React.js, Node.js, Express, MongoDB, JavaScript, HTML, CSS, Tailwind, and Bootstrap, I build responsive and full-stack solutions.",
+    "I’m constantly learning, exploring backend architecture, API design, and cloud services like AWS to grow as a developer.",
+    "Solving challenging problems, optimizing performance, and collaborating on innovative projects truly excites me.",
+    "Coding isn’t just my job—it’s my passion. I enjoy writing clean, maintainable code and creating meaningful experiences for users.",
   ];
 
   // SAME animation system as Tech
